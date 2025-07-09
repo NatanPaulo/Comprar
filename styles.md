@@ -1,4 +1,4 @@
-3 Tipos de estilização em React Native:
+Existem 3 formas de estilização em React Native:
 Propriedades que tem valor "string", precisam utilizar aspas
 
 1º Estilização: Inline

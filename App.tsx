@@ -6,7 +6,7 @@ import { View, Text } from "react-native";
 import { styles } from "./styles";
 
 // 2º regra: Um componente pode retornar um único elemento pai(Indentação):
-export function App() {
+export default function App() {
   return (
     // 1º Estilização: Inline
     // Propriedades que tem valor "string", precisam utilizar aspas

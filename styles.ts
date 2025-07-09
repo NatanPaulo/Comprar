@@ -1,8 +1,6 @@
 // 3º Estilização: Externo
 import { StyleSheet } from "react-native";
 
-
-
 /*
 Agora que dedicamos os estilos em arquivo separado. 
 É necessário utilizar o "export" para compartilhar com outros arquivos
