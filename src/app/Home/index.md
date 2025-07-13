@@ -16,22 +16,3 @@ export default function App() {
     </View>
   );
 }
-
-
-
- 2º Estilização: Interno
-/*
-const styles = StyleSheet.create({
-   Propriedades que tem valor "string", precisam utilizar aspas
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  text: {
-    fontSize: 32,
-    fontWeight: "900",
-    color: "blue",
-  },
-});
-*/
