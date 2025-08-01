@@ -1,12 +1,14 @@
 // Executar local: npx expo start
 // Executar externo: npx expo start --tunnel
 
-import { View, Image, ImageBackgroundComponent } from "react-native";
+import { View, Image, TouchableOpacity, Text } from "react-native";
 import { styles } from "./styles";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { Filter } from "@/components/Filter";
 import { FilterStatus } from "@/types/FilterStatus";
+
+const FILTER_STATUS: FilterStatus[] = [FilterStatus.PENDING, FilterStatus.DONE];
 
 export function Home() {
   return (
@@ -16,9 +18,17 @@ export function Home() {
         <Input placeholder="O que você deseja comprar?" />
         <Button title="Entrar" />
       </View>
+
       <View style={styles.content}>
-        <Filter status={FilterStatus.DONE} isActive={true} />
-        <Filter status={FilterStatus.PENDING} isActive={false} />
+        <View style={styles.header}>
+          {FILTER_STATUS.map((status) => (
+            <Filter key={status} status={status} isActive></Filter>
+          ))}
+
+          <TouchableOpacity style={styles.clearButton}>
+            <Text style={styles.clearText}>Limpar</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
