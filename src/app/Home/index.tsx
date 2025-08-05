@@ -1,7 +1,7 @@
 // Executar local: npx expo start
 // Executar externo: npx expo start --tunnel
 
-import { View, Image, TouchableOpacity, Text } from "react-native";
+import { View, Image, TouchableOpacity, Text, ScrollView } from "react-native";
 import { styles } from "./styles";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
@@ -30,11 +30,19 @@ export function Home() {
             <Text style={styles.clearText}>Limpar</Text>
           </TouchableOpacity>
         </View>
-        <Item
-          data={{ status: FilterStatus.DONE, description: "Café" }}
-          onStatus={() => console.log("mudar status")}
-          onRemove={() => console.log("remover")}
-        ></Item>
+        <ScrollView>
+          {/* mostrei como ativar a rolagem utilizando a ScrollView, que é útil para
+          exibir elementos que não cabem na tela. Para listas maiores, mencionei
+          que a FlatList é a melhor prática, que abordaremos na próxima aula. */}
+          {Array.from({ length: 100 }).map((value, index) => (
+            <Item
+              key={index}
+              data={{ status: FilterStatus.DONE, description: "Café" }}
+              onStatus={() => console.log("mudar status")}
+              onRemove={() => console.log("remover")}
+            ></Item>
+          ))}
+        </ScrollView>
       </View>
     </View>
   );
